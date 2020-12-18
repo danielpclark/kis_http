@@ -29,13 +29,13 @@ module KisHttp
     private
 
     def request(url, body: nil, headers: nil, options: nil)
-      options = Rest.Options(options) if options
+      options = KisHttp.Options(options) if options
 
       uri = URI("#{url}#{options}")
 
       request = yield uri.request_uri
 
-      Rest.Headers(headers).assign_each_to(request) if headers
+      KisHttp.Headers(headers).assign_each_to(request) if headers
 
       request.body = body ? JSON.generate(body) : ''
 

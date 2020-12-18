@@ -135,12 +135,12 @@ module KisHttp
   end
 
   def self.Options(obj)
-    if obj.is_a? Rest::Options
+    if obj.is_a? KisHttp::Options
       obj
     elsif obj.is_a? Hash
-      Rest::Options.new(**obj)
+      KisHttp::Options.new(**obj)
     elsif obj.is_a? Array
-      Rest::Options.new(**obj.to_h)
+      KisHttp::Options.new(**obj.to_h)
     else
       raise 'Invalid object type for Options!'
     end

@@ -70,12 +70,12 @@ module KisHttp
   end
 
   def self.Headers(obj)
-    if obj.is_a? Rest::Headers
+    if obj.is_a? KisHttp::Headers
       obj
     elsif obj.is_a? Hash
-      Rest::Headers.new(**obj)
+      KisHttp::Headers.new(**obj)
     elsif obj.is_a? Array
-      Rest::Headers.new(**obj.to_h)
+      KisHttp::Headers.new(**obj.to_h)
     else
       raise 'Invalid object type for Headers!'
     end

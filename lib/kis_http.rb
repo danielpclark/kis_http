@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-require 'kis_http/version'
 require 'net/http'
+require 'kis_http/version'
+require 'kis_http/headers'
+require 'kis_http/options'
 
 # All the HTTP things
 module KisHttp
@@ -37,7 +39,7 @@ module KisHttp
 
       KisHttp.Headers(headers).assign_each_to(request) if headers
 
-      request.body = body ? JSON.generate(body) : ''
+      request.body = body
 
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = (uri.scheme == 'https')

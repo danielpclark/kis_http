@@ -4,8 +4,6 @@
 
 Keep it Simple HTTP
 
-**NOTE**: Current implementation is JSON only.
-
 ## Installation
 
 Add this line to your application's Gemfile:

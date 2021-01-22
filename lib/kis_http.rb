@@ -28,6 +28,12 @@ module KisHttp
       end
     end
 
+    def delete(url, **kwargs)
+      request(url, **kwargs) do |uri|
+        Net::HTTP::Delete.new(uri)
+      end
+    end
+
     private
 
     def request(url, body: nil, headers: nil, options: nil)

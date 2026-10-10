@@ -1,4 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/kis_http.svg)](http://badge.fury.io/rb/kis_http)
+[![CI](https://github.com/danielpclark/kis_http/actions/workflows/ci.yml/badge.svg)](https://github.com/danielpclark/kis_http/actions/workflows/ci.yml)
 
 # KisHttp
 

@@ -151,8 +151,12 @@ module KisHttp
       [Headers, @heads].hash
     end
 
+    # Renders its own format rather than relying on `Hash#inspect`, whose
+    # spacing changed in Ruby 3.4.
     def inspect
-      "#<#{self.class} #{@heads.inspect}>"
+      rendered = @heads.map { |name, value| "#{name}: #{value.inspect}" }.join(', ')
+      rendered = " #{rendered}" unless rendered.empty?
+      "#<#{self.class}#{rendered}>"
     end
 
     private # @private

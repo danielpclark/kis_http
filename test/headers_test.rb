@@ -151,7 +151,8 @@ class HeadersTest < Minitest::Test
   end
 
   def test_inspect
-    assert_equal '#<KisHttp::Headers {"A"=>"1"}>', Headers.new('A' => 1).inspect
+    assert_equal '#<KisHttp::Headers A: "1", Content-Type: "x">', Headers.new('A' => 1, content_type: 'x').inspect
+    assert_equal '#<KisHttp::Headers>', Headers.new.inspect
   end
 
   # --- lookup ---------------------------------------------------------------

@@ -119,7 +119,9 @@ class EchoServer
     end
 
     length = headers['content-length'].to_i
-    body = length.positive? ? socket.read(length) : ''
+    # Socket reads come back as binary; tag the bytes as UTF-8 so JSON on
+    # older Rubies does not refuse to transcode non-ASCII bodies.
+    body = length.positive? ? socket.read(length).force_encoding(Encoding::UTF_8) : ''
 
     Request.new(method, target, headers, body)
   end

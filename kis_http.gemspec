@@ -12,8 +12,8 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Keep it Simple for Net::HTTP'
   spec.description   = 'DRY for Net::HTTP'
-  spec.homepage      = 'https://github.com/danielpclark/kist_http'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
+  spec.homepage      = 'https://github.com/danielpclark/kis_http'
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.6.0')
 
   spec.files = Dir['lib/**/*']
 

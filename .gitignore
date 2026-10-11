@@ -11,3 +11,6 @@
 .rspec_status
 **/*.swp
 **/*.gem
+
+# gems do not commit their lockfile
+/Gemfile.lock
